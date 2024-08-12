@@ -1,0 +1,611 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient(#211535,   #673ab7);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*ALL DEVICES*/
+/*BARRA DI NAVIGAZIONE*/
+.navbar {
+    background-image: linear-gradient(to top left, #673ab7,#211535);
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    background-color: #7753b4;
+}
+
+.offcanvas-header {
+    background-image: linear-gradient(to top left, #673ab7,#211535);
+    color: #ffffff;
+
+}
+
+.offcanvas-end {
+    background-color: #B39DDB;
+}
+
+.nav-item a {
+    color: #211535;
+    font-size: 18px;
+}
+
+.btn-close {
+    background-color: #7753b4;
+}
+
+/*HOME*/
+.home-container {
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    display: flex;
+    margin: 0 auto 0 auto;
+    background-image: url(images/ai-trees.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.home-container h1 {
+    align-self: center;
+    font-size: 80px;
+    font-weight: 800;
+    color: #e0e0e0;
+    text-shadow: 2px 2px 4px black;
+}
+
+.home-container p {
+    align-self: center;
+    color: #ffffff;
+}
+
+/*SKILLS*/
+.skills-container {
+    width: 100vw;
+    background-color: #ffffff;
+    height: 90vh;
+    margin-top: 10vh;
+}
+
+.skills-box {
+    display: flex;
+    height: 60vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.skills {
+    border-radius: 40px;
+    margin-right: 20px;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+}
+
+.skills h2 {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.skills ul {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills li {
+    display: flex;
+    font-size: 25px;
+}
+
+.skills p {
+    display: flex;
+    font-size: 25px;
+}
+
+.skills button {
+    display: flex;
+    align-self: center;
+    background-color: #673ab7;
+}
+
+.skills button:hover,
+.skills button:hover:active {  background-color: #9b63fa;
+}
+.skills button:active,
+.skills button:visited {
+    background-color: #673ab7;
+}
+
+.parallax {
+    background-image: url(images/ai-space.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 90vh;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}
+
+
+/*PROGETTI PC-TABLET*/
+.subtitle-prjct h1 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #211535;
+    font-size: 70px;
+}
+
+.cards-container {
+    margin: 100px auto 0 auto;
+    height: auto;
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    width: 432px;
+    height: 432px;
+    border: 4px solid #673ab7;
+    display: inline;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.card:hover {
+    border: 2px solid #ffffff;
+}
+
+.card-3:hover {
+    border: 2px solid #263238;
+}
+
+.card-1,
+.card-2,
+.card-3 {
+    background-size: 432px;
+    background-repeat: no-repeat;
+}
+
+.card-1 {
+    background-image: url(images/developer-guy-1.jpg);
+}
+
+.card-2 {
+    background-image: url(images/developer-girl-1.png);
+}
+
+.card-3 {
+    background-image: url(images/developer-guy-3.jpg);
+}
+
+.card-img-top {
+    margin: 0 auto 0 auto;
+    height: 100px;
+    width: 100px;
+}
+
+.card-body {
+    color: #ffffff;
+    text-shadow: 4px 4px 8px black;
+}
+
+.card-body h5 {
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+button {
+    color: black;
+}
+
+/*CONTATTAMI*/
+
+.contact-me-section {
+    margin-top: 100px;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #c0ace4;
+}
+
+.contact-me-section h2 {
+    font-size: 55px;
+    display: flex;
+    text-align: center;
+    color: #211535;
+}
+
+.contact-me-section p {
+    text-align: center;
+    display: flex;
+    margin-top: 30px;
+}
+
+.contact-me-section button {
+    display: flex;
+    align-self: center;
+    margin-top: 30px;
+    background-color: #673ab7;
+}
+
+.contact-me-section button:hover,
+.contact-me-section button:hover:active {
+    background-color: #9b63fa;
+}
+
+.contact-me-section button:visited {
+    background-color: #673ab7;
+}
+
+/*SOCIAL PC-TABLET*/
+footer img {
+    width: 70px;
+    height: 70px;
+}
+
+footer {
+    align-items: center;
+    width: 100vw;
+    background-color: #959b9e;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+footer p {
+    color: #673ab7;
+    width: 50vw;
+    display: flex;
+    margin-left: 3vw;
+    font-size: 13px;
+}
+
+.social {
+    display: flex;
+    width: 30vw;
+}
+
+.social a {
+    display: flex;
+}
+
+@media only screen and (max-width:500px) {
+
+    /*BARRA DI NAVIGAZIONE*/
+    .offcanvas {
+        width: 50vw;
+    }
+    .navbar-brand {
+        width: 130px;
+        
+        overflow: hidden;
+        text-overflow:ellipsis;
+    }
+    /*HOME*/
+    .home-container {
+        height: 80vh;
+        width: 100vw;
+        background-image: url(images/ai-trees-vertical.png);
+        background-size: 80vh;
+    }
+
+    .home-container h1 {
+        font-size: 40px;
+    }
+
+    .home-container p {
+        font-size: 10px;
+    }
+
+    /*ABOUT ME*/
+    .about-me-container {
+        width: 100vw;
+        margin: 0 auto 0 auto;
+        height: auto;
+        justify-content: center;
+
+        background-color: #B39DDB;
+    }
+
+    .about-me-text {
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        padding: 60px;
+        flex-direction: column;
+        display: flex;
+    }
+
+    .about-me-text h3 {
+        color: white;
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        font-size: 30px;
+        text-shadow: 2px 2px 4px #211535;
+    }
+
+    .about-me-text p {
+        display: flex;
+        font-size: 17px;
+        color: #211535;
+    }
+
+    .profile-pic {
+        display: flex;
+        width: 60vw;
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 0 auto;
+    }
+
+    .pic-frame {
+        justify-content: center;
+        display: flex;
+        height: 33vh;
+        width: 50vw;
+    }
+
+    /*SKILLS*/
+    .skills-container {
+        width: 100vw;
+        height: 90vh;
+    }
+
+    .skills-box {
+        flex-direction: column;
+        height: 60vh;
+        padding: 0;
+    }
+
+    .skills {
+        width: 100vw;
+    }
+
+    .skills h2 {
+        font-size: 50px;
+    }
+
+    .skills li {
+        font-size: 18px;
+    }
+
+    .skills p {
+        font-size: 18px;
+    }
+
+    .parallax {
+        background-image: url(images/ai-abstract.jpg);
+        background-size: cover;
+        height: 100vh;
+    }
+
+
+    /*PROGETTI*/
+    .subtitle-prjct h1 {
+        font-size: 45px;
+        margin-top: 15vh;
+    }
+
+    .cards-container {
+        margin: 30px auto 0 auto;
+    }
+
+    .card {
+        width: 300px;
+        height: 300px;
+        margin-right: 25px;
+        margin-top: 25px;
+    }
+
+    .card-1,
+    .card-2,
+    .card-3 {
+        background-size: 300px;
+        background-repeat: no-repeat;
+    }
+
+    .card-img-top {
+        margin: 0 auto 0 auto;
+        height: 60px;
+        width: 60px;
+    }
+
+    .card-body h5 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    /*SOCIAL*/
+    .footer-content {
+        flex-direction: column;
+        margin: 0 auto 0 auto;
+    }
+
+    footer p {
+        color: #673ab7;
+        display: flex;
+        font-size: 12px;
+    }
+
+    .social {
+        justify-content: center;
+        width: 100vw;
+        display: flex;
+    }
+}
+
+@media only screen and (min-width:501px) and (max-width:960px) {
+
+    /*ABOUT ME*/
+    .about-me-container {
+        width: 100vw;
+        margin: 10vh auto 0 auto;
+        height: auto;
+        justify-content: center;
+
+        background-color: #B39DDB;
+    }
+
+    .about-me-text {
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        padding: 60px;
+        flex-direction: column;
+    }
+
+    .about-me-text h3 {
+        color: white;
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        font-size: 50px;
+        text-shadow: 2px 2px 4px #211535;
+    }
+
+    .about-me-text p {
+        display: flex;
+        font-size: 18px;
+        color: #211535;
+    }
+
+    .profile-pic {
+        display: flex;
+        width: 40vw;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 0 auto;
+
+    }
+
+    .pic-frame {
+        justify-content: center;
+        display: flex;
+        width: 30vw;
+        height: 40vh;
+    }
+    /*SKILLS*/
+
+    .skills-container {
+        width: 100vw;
+        height: 90vh;
+    }
+
+    .skills-box {
+        flex-direction: column;
+        height: 60vh;
+        padding: 0;
+    }
+
+    .skills {
+        width: 100vw;
+    }
+
+    .skills h2 {
+        font-size: 50px;
+    }
+
+    .skills li {
+        font-size: 18px;
+    }
+
+    .skills p {
+        font-size: 18px;
+    }
+
+}
+
+@media only screen and (min-width:961px) {
+
+
+
+    /*ABOUT ME*/
+    .about-me-container {
+        width: 90vw;
+        margin: 10vh auto 0 auto;
+        height: 90vh;
+        align-content: center;
+    }
+
+    .about-me-page {
+        display: flex;
+    }
+
+    .about-me-text {
+        align-items: center;
+        justify-content: center;
+        width: 60vw;
+        padding: 60px;
+        flex-direction: column;
+        background-color: #B39DDB;
+    }
+
+    .about-me-text h3 {
+        color: white;
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        font-size: 50px;
+        text-shadow: 2px 2px 4px #211535;
+    }
+
+    .about-me-text p {
+        display: flex;
+        font-size: 18px;
+        color: #211535;
+    }
+
+    .profile-pic {
+        display: flex;
+        width: 30vw;
+        height: 60vh;
+        justify-content: center;
+        align-items: center;
+        background-color: #B388FF;
+    }
+
+    .pic-frame {
+        justify-content: center;
+        display: flex;
+        width: 25vw;
+        height: 36vh;
+    }
+
+
+}

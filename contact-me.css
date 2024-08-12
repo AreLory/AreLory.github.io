@@ -1,0 +1,158 @@
+/*CONTACT-ME.HTML*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*BARRA DI NAVIGAZIONE*/
+.navbar {
+    background-image: linear-gradient(to top left, #673ab7,#211535);
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    background-color: #7753b4;
+}
+
+.offcanvas-header {
+    background-image: linear-gradient(to top left, #673ab7,#211535);
+    color: #ffffff;
+
+}
+
+.offcanvas-end {
+    background-color: #B39DDB;
+}
+
+.nav-item a {
+    color: #211535;
+    font-size: 18px;
+}
+
+.btn-close {
+    background-color: #7753b4;
+}
+
+
+/*FORM*/
+.form-container {
+    display: flex;
+    height: fit-content;
+    width: 90vw;
+    background-color: rgb(194, 196, 190);
+    border: 2px solid #673ab7;
+    margin: 100px auto 0 auto;
+    flex-direction: column;
+    padding: 40px;
+    align-items: center;
+}
+
+h1 {padding: 30px;}
+
+.form-row {
+    margin-top: 40px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+
+input {
+    display: flex;
+    width: 100%;
+}
+
+textarea {
+    height: 300px;
+}
+
+/*FOOTER*/
+
+  footer img {
+    width: 70px;
+    height: 70px;
+}
+
+footer {
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    background-color: #959b9e;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+footer p {
+    margin-left: 5vw;
+    color: #673ab7;
+    width: 50vw;
+    display: flex;
+}
+
+.social {
+    display: flex;
+    width: 30vw;
+    margin-right: 0;
+}
+
+@media only screen and (max-width:500px) {
+     /*BARRA DI NAVIGAZIONE*/
+     .offcanvas {
+        width: 50vw;
+    }
+    .navbar-brand {
+        width: 130px;
+        
+        overflow: hidden;
+        text-overflow:ellipsis;
+    }
+    
+    /*FOOTER*/
+    .footer-content {
+        flex-direction: column;
+        margin: 0 auto 0 auto;
+    }
+
+    footer p {
+        color: #673ab7;
+        display: flex;
+        font-size: 12px;
+    }
+
+    .social {
+        justify-content: center;
+        width: 100vw;
+        display: flex;
+    }
+}
+@media only screen and (min-width: 700px) {
+    input {
+        width: 70%;
+    }
+
+    .form-row {
+        flex-direction: row;
+    }
+
+    textarea {
+        width: 70%;
+        height: 200px;
+    }
+}
