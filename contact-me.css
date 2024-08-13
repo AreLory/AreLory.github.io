@@ -74,6 +74,28 @@ input {
 textarea {
     height: 300px;
 }
+/*Button*/
+.form-row button {
+    font-size: 16px;
+    font-weight: bold;
+  
+    color: #FFFFFF;
+    background-color: #673ab7;
+  
+    border: none;
+    border-radius: 3px;
+  
+    padding: 10px 40px;
+    cursor: pointer;
+  }
+  
+  .form-row button:hover {
+    background-color: #B39DDB;
+  }
+  
+  .form-row button:active {
+    background-color:#673ab7;
+  }
 
 /*FOOTER*/
 
@@ -155,4 +177,7 @@ footer p {
         width: 70%;
         height: 200px;
     }
+    .form-row button {
+        margin: 100px auto 0 auto
+      }
 }
