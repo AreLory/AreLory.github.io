@@ -9,14 +9,14 @@ html {
 }
 
 body {
-    background-image: linear-gradient(#211535,   #673ab7);
+    background-image: linear-gradient(#211535, #673ab7);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /*ALL DEVICES*/
 /*BARRA DI NAVIGAZIONE*/
 .navbar {
-    background-image: linear-gradient(to top left, #673ab7,#211535);
+    background-image: linear-gradient(to top left, #673ab7, #211535);
 }
 
 .navbar-brand {
@@ -28,7 +28,7 @@ body {
 }
 
 .offcanvas-header {
-    background-image: linear-gradient(to top left, #673ab7,#211535);
+    background-image: linear-gradient(to top left, #673ab7, #211535);
     color: #ffffff;
 
 }
@@ -53,7 +53,7 @@ body {
     height: 1000px;
     display: flex;
     margin: 0 auto 0 auto;
-    background-image: url(images/ai-trees.jpg);
+    background-image: url(/assets/images/ai-trees.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -131,15 +131,17 @@ body {
 }
 
 .skills button:hover,
-.skills button:hover:active {  background-color: #9b63fa;
+.skills button:hover:active {
+    background-color: #9b63fa;
 }
+
 .skills button:active,
 .skills button:visited {
     background-color: #673ab7;
 }
 
 .parallax {
-    background-image: url(images/ai-space.jpg);
+    background-image: url(/assets/images/ai-space.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -177,36 +179,44 @@ body {
 }
 
 .card:hover {
-    border: 2px solid #ffffff;
-}
-
-.card-3:hover {
-    border: 2px solid #263238;
+    border: none;
 }
 
 .card-1,
 .card-2,
-.card-3 {
-    background-size: 432px;
+.card-3, .card-4, .card-5 {
+    background-size: 500px;
     background-repeat: no-repeat;
 }
 
 .card-1 {
-    background-image: url(images/developer-guy-1.jpg);
+    background-image: url(/assets/images/space-7709489_1280.jpg);
+    background-size: cover ;
 }
 
 .card-2 {
-    background-image: url(images/developer-girl-1.png);
+    background-image: url(/assets/images/ai-generated-8737993_1280.jpg);
+    background-size: 500px;
 }
 
 .card-3 {
-    background-image: url(images/developer-guy-3.jpg);
+    background-image: url(/assets/images/universe-8770300_1280.jpg);
 }
 
+.card-4 {
+    background-image: url(/assets/images/nebula-8280847_1280.jpg);
+    background-size: auto;
+    background-position: -200px;
+}
+
+.card-5 {
+    background-image: url(/assets/images/universe-3979918_1280.jpg);
+    background-size: auto;
+}
 .card-img-top {
-    margin: 0 auto 0 auto;
-    height: 100px;
-    width: 100px;
+    margin: 20px 20px 0 20px;
+    height: 70px;
+    width: 70px;
 }
 
 .card-body {
@@ -302,23 +312,58 @@ footer p {
     display: flex;
 }
 
+/*BUTTON SOCIAL*/
+.facebook-btn {
+    background-color: #3b5998;
+}
+
+.facebook-btn:hover {
+    background-color: #243861;
+}
+
+.instagram-btn {
+    background-color: #ac2bac;
+}
+
+.instagram-btn:hover {
+    background-color: #631b63;
+}
+
+.github-btn {
+    background-color: #333333;
+}
+
+.github-btn:hover {
+    background-color: #202020;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #137537;
+}
+
 @media only screen and (max-width:500px) {
 
     /*BARRA DI NAVIGAZIONE*/
     .offcanvas {
         width: 50vw;
     }
+
     .navbar-brand {
         width: 130px;
-        
+
         overflow: hidden;
-        text-overflow:ellipsis;
+        text-overflow: ellipsis;
     }
+
     /*HOME*/
     .home-container {
         height: 80vh;
         width: 100vw;
-        background-image: url(images/ai-trees-vertical.png);
+        background-image: url(/assets/images/ai-trees-vertical.png);
         background-size: 80vh;
     }
 
@@ -409,7 +454,7 @@ footer p {
     }
 
     .parallax {
-        background-image: url(images/ai-abstract.jpg);
+        background-image: url(/assets/images/ai-abstract.jpg);
         background-size: cover;
         height: 100vh;
     }
@@ -434,13 +479,13 @@ footer p {
 
     .card-1,
     .card-2,
-    .card-3 {
-        background-size: 300px;
+    .card-3, .card-4, .card-5 {
         background-repeat: no-repeat;
     }
 
+
     .card-img-top {
-        margin: 0 auto 0 auto;
+        margin: 20px 20px 0 20px;
         height: 60px;
         width: 60px;
     }
@@ -520,6 +565,7 @@ footer p {
         width: 30vw;
         height: 40vh;
     }
+
     /*SKILLS*/
 
     .skills-container {

@@ -4,9 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /*BARRA DI NAVIGAZIONE*/
 .navbar {
-    background-image: linear-gradient(to top left, #673ab7,#211535);
+    background-image: linear-gradient(to top left, #673ab7, #211535);
 }
 
 .navbar-brand {
@@ -18,7 +19,7 @@
 }
 
 .offcanvas-header {
-    background-image: linear-gradient(to top left, #673ab7,#211535);
+    background-image: linear-gradient(to top left, #673ab7, #211535);
     color: #ffffff;
 
 }
@@ -50,7 +51,9 @@
     align-items: center;
 }
 
-h1 {padding: 30px;}
+h1 {
+    padding: 30px;
+}
 
 .form-row {
     margin-top: 40px;
@@ -73,34 +76,50 @@ input {
 
 textarea {
     height: 300px;
+    border: 2px solid #673ab7;
 }
+.form-row input[type='text'],
+.form-row input[type='email'] {
+    background-color: #FFFFFF;
+    border: 2px solid #673ab7;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.form-row input[type='text']:invalid,
+.form-row input[type='email']:invalid {
+    border: 2px solid #cc3234;
+    color: #D55C5F;
+    box-shadow: none;
+}
+
 /*Button*/
 .form-row button {
     font-size: 16px;
     font-weight: bold;
-  
+
     color: #FFFFFF;
     background-color: #673ab7;
-  
+
     border: none;
     border-radius: 3px;
-  
+
     padding: 10px 40px;
     cursor: pointer;
     margin-bottom: 50px;
-  }
-  
-  .form-row button:hover {
+}
+
+.form-row button:hover {
     background-color: #B39DDB;
-  }
-  
-  .form-row button:active {
-    background-color:#673ab7;
-  }
+}
+
+.form-row button:active {
+    background-color: #673ab7;
+}
 
 /*FOOTER*/
 
-  footer img {
+footer img {
     width: 70px;
     height: 70px;
 }
@@ -135,18 +154,53 @@ footer p {
     margin-right: 0;
 }
 
+/*BUTTON SOCIAL*/
+.facebook-btn {
+    background-color: #3b5998;
+}
+
+.facebook-btn:hover {
+    background-color: #243861;
+}
+
+.instagram-btn {
+    background-color: #ac2bac;
+}
+
+.instagram-btn:hover {
+    background-color: #631b63;
+}
+
+.github-btn {
+    background-color: #333333;
+}
+
+.github-btn:hover {
+    background-color: #202020;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #137537;
+}
+
 @media only screen and (max-width:500px) {
-     /*BARRA DI NAVIGAZIONE*/
-     .offcanvas {
+
+    /*BARRA DI NAVIGAZIONE*/
+    .offcanvas {
         width: 50vw;
     }
+
     .navbar-brand {
         width: 130px;
-        
+
         overflow: hidden;
-        text-overflow:ellipsis;
+        text-overflow: ellipsis;
     }
-    
+
     /*FOOTER*/
     .footer-content {
         flex-direction: column;
@@ -165,6 +219,7 @@ footer p {
         display: flex;
     }
 }
+
 @media only screen and (min-width: 700px) {
     input {
         width: 70%;
@@ -178,7 +233,8 @@ footer p {
         width: 70%;
         height: 200px;
     }
+
     .form-row button {
         margin: 100px auto 0 auto
-      }
+    }
 }
