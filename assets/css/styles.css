@@ -20,11 +20,22 @@ body {
 }
 
 .navbar-brand {
+    color: #d0d9dd;
+}
+
+.navbar-brand:hover {
     color: #ffffff;
+    text-shadow: 0 0 20px #ffffff;
 }
 
 .navbar-toggler {
     background-color: #7753b4;
+    transition: all 0.3s;
+}
+
+.navbar-toggler:hover {
+    transform: scale(1.2);
+    background-color: #B388FF;
 }
 
 .offcanvas-header {
@@ -40,10 +51,22 @@ body {
 .nav-item a {
     color: #211535;
     font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-item a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
 }
 
 .btn-close {
     background-color: #7753b4;
+    transition: all 0.3s;
+}
+
+.btn-close:hover {
+    transform: scale(1.2);
+    background-color: #B388FF;
 }
 
 /*HOME*/
@@ -128,6 +151,11 @@ body {
     display: flex;
     align-self: center;
     background-color: #673ab7;
+    transition: all 0.5s;
+}
+
+.skills button:hover {
+    transform: scale(1.2);
 }
 
 .skills button:hover,
@@ -145,6 +173,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     height: 90vh;
     padding-top: 15vh;
     padding-bottom: 15vh;
@@ -168,14 +197,19 @@ body {
     flex-wrap: wrap;
 }
 
+.card-box {
+    display: flex;
+}
+
 .card {
     display: flex;
     width: 432px;
     height: 432px;
-    border: 4px solid #673ab7;
+    border: 4px solid #9b63fa;
     display: inline;
     margin-right: 50px;
     margin-top: 50px;
+    box-shadow: 2px 2px 4px #211535;
 }
 
 .card:hover {
@@ -184,14 +218,18 @@ body {
 
 .card-1,
 .card-2,
-.card-3, .card-4, .card-5 {
+.card-3,
+.card-4,
+.card-5 {
     background-size: 500px;
     background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s;
 }
 
 .card-1 {
     background-image: url(/assets/images/space-7709489_1280.jpg);
-    background-size: cover ;
+    background-size: cover;
 }
 
 .card-2 {
@@ -213,6 +251,7 @@ body {
     background-image: url(/assets/images/universe-3979918_1280.jpg);
     background-size: auto;
 }
+
 .card-img-top {
     margin: 20px 20px 0 20px;
     height: 70px;
@@ -264,11 +303,16 @@ button {
     align-self: center;
     margin-top: 30px;
     background-color: #673ab7;
+    transition: all 0.5s;
 }
 
 .contact-me-section button:hover,
 .contact-me-section button:hover:active {
     background-color: #9b63fa;
+}
+
+.contact-me-section button:hover {
+    transform: scale(1.2);
 }
 
 .contact-me-section button:visited {
@@ -409,6 +453,12 @@ footer p {
         color: #211535;
     }
 
+    .about-me-text strong {
+        font-weight: 800;
+        color: #673ab7;
+        text-shadow: none;
+    }
+
     .profile-pic {
         display: flex;
         width: 60vw;
@@ -479,7 +529,9 @@ footer p {
 
     .card-1,
     .card-2,
-    .card-3, .card-4, .card-5 {
+    .card-3,
+    .card-4,
+    .card-5 {
         background-repeat: no-repeat;
     }
 
@@ -540,13 +592,18 @@ footer p {
         display: flex;
         width: 100%;
         font-size: 50px;
-        text-shadow: 2px 2px 4px #211535;
     }
 
     .about-me-text p {
         display: flex;
         font-size: 18px;
         color: #211535;
+    }
+
+    .about-me-text strong {
+        font-weight: 800;
+        color: #673ab7;
+        text-shadow: none;
     }
 
     .profile-pic {
@@ -637,6 +694,12 @@ footer p {
         color: #211535;
     }
 
+    .about-me-text strong {
+        font-weight: 800;
+        color: #673ab7;
+        text-shadow: none;
+    }
+
     .profile-pic {
         display: flex;
         width: 30vw;
@@ -653,5 +716,8 @@ footer p {
         height: 36vh;
     }
 
+    .card:hover {
 
+        transform: scale(1.15);
+    }
 }
