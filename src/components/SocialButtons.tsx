@@ -2,8 +2,12 @@ import { portfolioData } from "../mock";
 import { MailIcon } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
+import type { IconType } from "react-icons/lib";
+
+type SocialIconKey = "github" | "linkedin" | "mail";
+
 const SocialLinks = () => {
-  const socialIcons = {
+  const socialIcons:Record<SocialIconKey, IconType>  = {
     github: FaGithub,
     linkedin: FaLinkedin,
     mail: MailIcon,
@@ -11,13 +15,13 @@ const SocialLinks = () => {
   return (
     <ul className="relative flex gap-6">
       {portfolioData.socialLinks.map((social) => {
-        const Icon = socialIcons[social.icon]
+        const Icon = socialIcons[social.icon as keyof typeof socialIcons];
         
         return (
         <SocialButton
           key={social.name}
           title={social.name}
-          icon={Icon && <Icon/>}
+          icon={Icon && <Icon />}
           gradientFrom={social.fromColor}
           gradientTo={social.toColor}
           url={social.url}
@@ -29,7 +33,15 @@ const SocialLinks = () => {
 
 export default SocialLinks;
 
-const SocialButton = ({ icon, title, gradientFrom, gradientTo, url }) => {
+interface Props {
+  icon:any,
+  title:string,
+  gradientFrom:string,
+  gradientTo:string,
+  url:string
+}
+
+const SocialButton = ({ icon, title, gradientFrom, gradientTo, url }:Props) => {
   return (
     <a
       href={url}

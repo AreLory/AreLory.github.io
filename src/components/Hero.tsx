@@ -6,7 +6,7 @@ import me from "../assets/images/lorenzo.png";
 import SocialLinks from "./SocialButtons";
 
 export default function Hero() {
-  const scrollToSection = (href) => {
+  const scrollToSection = (href:string) => {
     const element = document.querySelector(href);
     if (element) {
       const offset = 80;

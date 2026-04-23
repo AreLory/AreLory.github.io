@@ -6,7 +6,7 @@ const Skills = () => {
     ...new Set(portfolioData.skills.map((skill) => skill.category)),
   ];
 
-  const getSkillsByCategory = (category) => {
+  const getSkillsByCategory = (category:string) => {
     return portfolioData.skills.filter((skill) => skill.category === category);
   };
 

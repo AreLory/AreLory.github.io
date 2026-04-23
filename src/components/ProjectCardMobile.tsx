@@ -1,6 +1,10 @@
 import { useState } from "react";
+import type { Project } from "../types/Data";
+interface Props {
+  projects: Project[]
+}
 
-export default function ProjectCardMobile({ projects }) {
+export default function ProjectCardMobile({ projects }:Props) {
   const [expandedIndex, setExpandedIndex] = useState(0);
 
   return (

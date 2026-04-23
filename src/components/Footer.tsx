@@ -4,17 +4,20 @@ import { Heart, MailIcon } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import { portfolioData } from "../mock";
+import type { IconType } from "react-icons/lib";
+
+export type SocialIconKey = "github" | "linkedin" | "mail";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const socialIcons = {
+  const socialIcons:Record<SocialIconKey, IconType> = {
       github: FaGithub,
       linkedin: FaLinkedin,
       mail: MailIcon,
     };
 
-  const scrollToSection = (href) => {
+  const scrollToSection = (href:string) => {
     const element = document.querySelector(href);
     if (element) {
       const offset = 80;
@@ -61,7 +64,7 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Connect</h4>
             <div className="flex gap-4">
               {portfolioData.socialLinks.map((social) => {
-                const Icon = socialIcons[social.icon];
+                const Icon = socialIcons[social.icon as keyof typeof socialIcons];
                 return (
                   <motion.a
                     key={social.name}

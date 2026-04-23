@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send } from "lucide-react";
 import { portfolioData } from "../mock";
-import luffy from '../assets/images/monkeydluffy.jpg'
+import luffy from "../assets/images/monkeydluffy.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,17 +15,19 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useRef();
+  const form = useRef<HTMLFormElement |null>(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
+      if (!form.current) return;
+
       const result = await emailjs.sendForm(
         "service_q60ypoo",
         "template_osxnrks",
@@ -41,7 +43,7 @@ const Contact = () => {
         subject: "",
         message: "",
       });
-    } catch (error) {
+    } catch (error:any) {
       console.log("Error:", error.text);
     }
 
@@ -49,10 +51,7 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-24"
-    >
+    <section id="contact" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -128,13 +127,18 @@ const Contact = () => {
               <div className="absolute inset-0 bg-linear-to-r from-orange-500/10 to-red-500/10 rounded-2xl blur-xl" />
               <div className="relative bg-black/5 backdrop-blur-sm border border-black/10 rounded-2xl p-6">
                 <p className="text-gray-700 italic">
-                  “No matter how hard or impossible it is, never lose sight of your goal.” 
+                  “No matter how hard or impossible it is, never lose sight of
+                  your goal.”
                 </p>
                 <div className="flex items-center">
-                <p className="text-orange-400 mt-2 font-semibold px-4">
-                  ~ Monkey D. Luffy
-                </p>
-                <img src={luffy} alt="Monkey D. Luffy" className="size-12 rounded-full object-cover"/>
+                  <p className="text-orange-400 mt-2 font-semibold px-4">
+                    ~ Monkey D. Luffy
+                  </p>
+                  <img
+                    src={luffy}
+                    alt="Monkey D. Luffy"
+                    className="size-12 rounded-full object-cover"
+                  />
                 </div>
               </div>
             </div>

@@ -1,7 +1,16 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-export default function Navbar({ navItems }) {
+interface Props {
+  navItems: { name: string; href: string }[];
+}
+
+interface TabProps {
+  children: any;
+  href: string;
+  setPosition: any
+}
+export default function Navbar({ navItems }: Props) {
   return (
     <div>
       <SlideTabs navItems={navItems} />
@@ -9,7 +18,7 @@ export default function Navbar({ navItems }) {
   );
 }
 
-function SlideTabs({ navItems }) {
+function SlideTabs({ navItems }: Props) {
   const [position, setPosition] = useState({
     left: 60,
     with: 150,
@@ -37,10 +46,10 @@ function SlideTabs({ navItems }) {
   );
 }
 
-const Tab = ({ children, href, setPosition }) => {
-  const ref = useRef(null);
+const Tab = ({ children, href, setPosition }: TabProps) => {
+  const ref = useRef<HTMLButtonElement|null>(null);
 
-  const scrollToSection = (href) => {
+  const scrollToSection = (href:string) => {
     const element = document.querySelector(href);
     if (element) {
       const offset = 80;
@@ -76,7 +85,7 @@ const Tab = ({ children, href, setPosition }) => {
   );
 };
 
-const Cursor = ({ position }) => {
+const Cursor = ({ position }:{position:any}) => {
   return (
     <motion.li
       animate={position}

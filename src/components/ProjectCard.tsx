@@ -9,7 +9,7 @@ interface Props {
 export default function ProjectCard({ projects }: Props) {
   const [expandedIndex, setExpandedIndex] = useState(0);
 
-  const handleCardHover = (index) => {
+  const handleCardHover = (index:number) => {
     setExpandedIndex(index);
   };
 
