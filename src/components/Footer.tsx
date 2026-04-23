@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold bg-linear-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold bg-linear-to-r from-orange-400 to-red-400 bg-clip-text text-transparent mb-4">
               {portfolioData.name}
             </h3>
             <p className="text-gray-400 mb-4">{portfolioData.tagline}</p>
@@ -47,7 +47,7 @@ const Footer = () => {
                   <li key={item}>
                     <button
                       onClick={() => scrollToSection(`#${item.toLowerCase()}`)}
-                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                      className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
                     >
                       {item}
                     </button>
@@ -68,7 +68,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-300"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-orange-400 hover:border-orange-400 transition-all duration-300"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -87,7 +87,7 @@ const Footer = () => {
             </p>
             <p className="text-gray-400 text-sm flex items-center gap-2">
               Made with{" "}
-              <Heart size={16} className="text-cyan-400 fill-cyan-400" /> and
+              <Heart size={16} className="text-orange-400 fill-orange-400" /> and
               lots of coffee
             </p>
           </div>

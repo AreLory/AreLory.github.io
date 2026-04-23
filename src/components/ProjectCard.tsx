@@ -7,54 +7,49 @@ interface Props {
 }
 
 export default function ProjectCard({ projects }: Props) {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState(0);
 
   const handleCardHover = (index) => {
-    setExpandedIndex(index === expandedIndex ? -1 : index);
+    setExpandedIndex(index);
   };
 
   const cardVariants = {
-    expanded: {
-      width: "500px",
-    },
-    collapsed: {
-      width: "200px",
-    },
-  };
+  expanded: {
+    flex: 3,
+  },
+  collapsed: {
+    flex: 1,
+  },
+}
 
   return (
     <div className="mt-12 flex flex-col md:flex-row justify-center items-stretch gap-6 px-4">
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          className={`relative group cursor-pointer h-125 w-full md:w-75 bg-cover bg-center rounded-2xl overflow-hidden transition-all duration-300 ${
+          className={`relative cursor-pointer h-125 w-full md:w-75 bg-cover bg-center rounded-2xl overflow-hidden transition-all duration-300 ${
             index === expandedIndex ? "md:w-100" : ""
           }`}
           variants={cardVariants}
           initial="collapsed"
-          // animate={index === expandedIndex ? "expanded" : "collapsed"}
+          animate={index === expandedIndex ? "expanded" : "collapsed"}
           transition={{ duration: 0.1 }}
           onHoverStart={() => handleCardHover(index)}
-          onHoverEnd={()=>handleCardHover(null)}
-          whileHover={'expanded'}
+          onHoverEnd={() => setExpandedIndex(0)}
           style={{
             backgroundImage: `url(${project.image})`,
           }}
         >
-          {/* Overlay */}
           <motion.div
             layout
             className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent backdrop-blur-[2px] flex flex-col justify-end p-4"
           >
-            {/* Title */}
             <motion.h2
-              layout='position'
+              layout="position"
               className="text-xl font-bold text-white text-center"
             >
               {project.title}
             </motion.h2>
-
-            {/* Expanded content */}
             {index === expandedIndex && (
               <motion.div
                 layout
@@ -64,12 +59,9 @@ export default function ProjectCard({ projects }: Props) {
                 transition={{ delay: 0.3, duration: 0.3, ease: "easeOut" }}
                 className="mt-3 flex flex-col items-center gap-3"
               >
-                {/* Description */}
                 <p className="text-gray-300 text-sm text-center leading-relaxed">
                   {project.description}
                 </p>
-
-                {/* Technologies */}
                 <div className="flex flex-wrap justify-center gap-2 mt-2">
                   {project.technologies.map((tech, i) => (
                     <span
@@ -80,14 +72,12 @@ export default function ProjectCard({ projects }: Props) {
                     </span>
                   ))}
                 </div>
-
-                {/* Buttons */}
                 <div className="flex gap-3 mt-4">
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg font-medium bg-linear-to-r from-cyan-500 to-emerald-500 text-white shadow-lg shadow-cyan-500/40 hover:scale-105 hover:shadow-cyan-400/70 transition-all duration-300"
+                    className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg font-medium bg-linear-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/40 hover:scale-105 hover:shadow-cyan-400/70 transition-all duration-300"
                   >
                     🚀 Live
                   </a>
@@ -104,8 +94,6 @@ export default function ProjectCard({ projects }: Props) {
               </motion.div>
             )}
           </motion.div>
-
-          {/* Hover glow */}
           <div className="absolute inset-0 rounded-2xl ring-0 group-hover:ring-2 ring-cyan-400/40 transition-all duration-300 pointer-events-none" />
         </motion.div>
       ))}

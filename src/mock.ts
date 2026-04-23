@@ -1,9 +1,7 @@
 import type { pfData } from "./types/Data";
-import insolitopaninoTruck from "./assets/furgoncino2.jpg";
-import spoonacularImg from "./assets/spoonacular.png";
-import nodejsImg from "./assets/nodejs.jpg";
-import typescriptImg from "./assets/typescript.jpg";
-import hakernewsImg from "./assets/hakernews.png";
+import insolitopaninoTruck from "./assets/images/furgoncino2.jpg";
+import spoonacularImg from "./assets/images/spoonacular.png";
+import hakernewsImg from "./assets/images/hakernews.png";
 
 export const portfolioData: pfData = {
   name: "Lorenzo Arena",
@@ -14,13 +12,27 @@ export const portfolioData: pfData = {
   email: "arena.lorenzo2406@gmail.com",
   location: "Pineto (TE), Abruzzo, Italy ",
   socialLinks: [
-    { name: "GitHub", url: "https://github.com/Arelory", icon: "github" },
+    {
+      name: "GitHub",
+      url: "https://github.com/Arelory",
+      icon: "github",
+      fromColor: " 	#24292e",
+      toColor: " 	#2b3137",
+    },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/lorenzo-arena-6330903ba/",
       icon: "linkedin",
+      fromColor: "#0a66c2",
+      toColor: "#004182",
     },
-    { name: "Email", url: "mailto:arena.lorenzo2406@gmail.com", icon: "mail" },
+    {
+      name: "Email",
+      url: "mailto:arena.lorenzo2406@gmail.com",
+      icon: "mail",
+      fromColor: "#A32E7E",
+      toColor: "#E3436B",
+    },
   ],
 
   skills: [
@@ -64,7 +76,7 @@ export const portfolioData: pfData = {
       id: 2,
       title: " Veggie Vibes - Vegetarian Recipes",
       description:
-  "Web application that uses the Spoonacular API to discover vegetarian recipes. Users can filter results based on dietary preferences and allergies for a personalized experience.",
+        "Web application that uses the Spoonacular API to discover vegetarian recipes. Users can filter results based on dietary preferences and allergies for a personalized experience.",
       image: spoonacularImg,
       technologies: [
         { name: "React", icon: "react" },
@@ -83,7 +95,7 @@ export const portfolioData: pfData = {
       id: 3,
       title: "Haker News",
       description:
-  "Web app that fetches and displays the latest tech news from Hacker News in a simple and user-friendly interface.",
+        "Web app that fetches and displays the latest tech news from Hacker News in a simple and user-friendly interface.",
       image: hakernewsImg,
       technologies: [
         { name: "Javascript", icon: "react" },

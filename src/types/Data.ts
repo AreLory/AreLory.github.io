@@ -5,7 +5,7 @@ export interface pfData {
   bio: string;
   email: string;
   location: string;
-  socialLinks: { name: string; url: string; icon: string }[];
+  socialLinks: Social[];
   skills: Skills[];
   projects: Project[];
   studies: Studies[];
@@ -29,13 +29,21 @@ export interface Project {
 }
 
 export interface Studies {
-  school: string
-  period: string
-  description: string
+  school: string;
+  period: string;
+  description: string;
 }
 export interface Experience {
   company: string;
   position: string;
   period: string;
   description: string;
+}
+
+export interface Social {
+  name: string;
+  url: string;
+  icon: string;
+  fromColor: string;
+  toColor: string;
 }

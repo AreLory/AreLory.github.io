@@ -1,21 +1,20 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-export default function Navbar({navItems}) {
+export default function Navbar({ navItems }) {
   return (
-    <div className="w-full">
+    <div>
       <SlideTabs navItems={navItems} />
     </div>
   );
 }
 
-function SlideTabs({navItems}) {
+function SlideTabs({ navItems }) {
   const [position, setPosition] = useState({
     left: 60,
     with: 150,
     opacity: 1,
   });
-
 
   return (
     <ul
@@ -25,11 +24,13 @@ function SlideTabs({navItems}) {
           opacity: 0,
         }));
       }}
-      className="relative mx-auto flex w-[70vw] rounded-full border-2 border-black bg-white p-1"
+      className="relative mx-auto flex w-[50vw] rounded-full border-2 border-black bg-white p-1"
     >
-      {navItems.map((item)=><Tab setPosition={setPosition} href={item.href}>
-        {item.name}
-      </Tab>)}
+      {navItems.map((item) => (
+        <Tab key={item.name} setPosition={setPosition} href={item.href}>
+          {item.name}
+        </Tab>
+      ))}
 
       <Cursor position={position} />
     </ul>
@@ -39,7 +40,6 @@ function SlideTabs({navItems}) {
 const Tab = ({ children, href, setPosition }) => {
   const ref = useRef(null);
 
-  
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
@@ -53,10 +53,10 @@ const Tab = ({ children, href, setPosition }) => {
       });
     }
   };
-  
+
   return (
     <button
-      onClick={()=>scrollToSection(`#${href}`)}
+      onClick={() => scrollToSection(`#${href}`)}
       ref={ref}
       onMouseEnter={() => {
         if (!ref.current) return;
