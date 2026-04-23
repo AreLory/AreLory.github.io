@@ -1,20 +1,21 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-export default function Navbar() {
+export default function Navbar({navItems}) {
   return (
-    <div className="grid h-screen place-content-center bg-neutral-100">
-      <SlideTabs />
+    <div className="w-full">
+      <SlideTabs navItems={navItems} />
     </div>
   );
 }
 
-function SlideTabs() {
+function SlideTabs({navItems}) {
   const [position, setPosition] = useState({
     left: 60,
     with: 150,
     opacity: 1,
   });
+
 
   return (
     <ul
@@ -24,23 +25,38 @@ function SlideTabs() {
           opacity: 0,
         }));
       }}
-      className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
+      className="relative mx-auto flex w-[70vw] rounded-full border-2 border-black bg-white p-1"
     >
-      <Tab setPosition={setPosition}>Home</Tab>
-      <Tab setPosition={setPosition}>About Me</Tab>
-      <Tab setPosition={setPosition}>Skills</Tab>
-      <Tab setPosition={setPosition}>Projects</Tab>
-      <Tab setPosition={setPosition}>Contact Me</Tab>
+      {navItems.map((item)=><Tab setPosition={setPosition} href={item.href}>
+        {item.name}
+      </Tab>)}
 
       <Cursor position={position} />
     </ul>
   );
 }
 
-const Tab = ({ children, setPosition }) => {
+const Tab = ({ children, href, setPosition }) => {
   const ref = useRef(null);
+
+  
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+  
   return (
-    <li
+    <button
+      onClick={()=>scrollToSection(`#${href}`)}
       ref={ref}
       onMouseEnter={() => {
         if (!ref.current) return;
@@ -53,10 +69,10 @@ const Tab = ({ children, setPosition }) => {
           left: ref.current.offsetLeft,
         });
       }}
-      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      className="relative z-10 block w-full text-center cursor-pointer px-3 py-1.5 text-xs uppercase text-white font-bold mix-blend-difference md:px-5 md:py-3 md:text-base"
     >
       {children}
-    </li>
+    </button>
   );
 };
 

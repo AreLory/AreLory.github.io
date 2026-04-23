@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Project } from "../types/Data";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 export default function ProjectCard({ projects }: Props) {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
-  const handleCardClick = (index) => {
+  const handleCardHover = (index) => {
     setExpandedIndex(index === expandedIndex ? -1 : index);
   };
 
@@ -27,14 +27,16 @@ export default function ProjectCard({ projects }: Props) {
       {projects.map((project, index) => (
         <motion.div
           key={index}
-          className={`relative group cursor-pointer h-[500px] w-full md:w-[300px] bg-cover bg-center rounded-2xl overflow-hidden transition-all duration-300 ${
-            index === expandedIndex ? "md:w-[400px]" : ""
+          className={`relative group cursor-pointer h-125 w-full md:w-75 bg-cover bg-center rounded-2xl overflow-hidden transition-all duration-300 ${
+            index === expandedIndex ? "md:w-100" : ""
           }`}
           variants={cardVariants}
           initial="collapsed"
-          animate={index === expandedIndex ? "expanded" : "collapsed"}
+          // animate={index === expandedIndex ? "expanded" : "collapsed"}
           transition={{ duration: 0.1 }}
-          onClick={() => handleCardClick(index)}
+          onHoverStart={() => handleCardHover(index)}
+          onHoverEnd={()=>handleCardHover(null)}
+          whileHover={'expanded'}
           style={{
             backgroundImage: `url(${project.image})`,
           }}
@@ -42,7 +44,7 @@ export default function ProjectCard({ projects }: Props) {
           {/* Overlay */}
           <motion.div
             layout
-            className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-[2px] flex flex-col justify-end p-4"
+            className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent backdrop-blur-[2px] flex flex-col justify-end p-4"
           >
             {/* Title */}
             <motion.h2
@@ -85,7 +87,7 @@ export default function ProjectCard({ projects }: Props) {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg font-medium bg-gradient-to-r from-cyan-500 to-emerald-500 text-white shadow-lg shadow-cyan-500/40 hover:scale-105 hover:shadow-cyan-400/70 transition-all duration-300"
+                    className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg font-medium bg-linear-to-r from-cyan-500 to-emerald-500 text-white shadow-lg shadow-cyan-500/40 hover:scale-105 hover:shadow-cyan-400/70 transition-all duration-300"
                   >
                     🚀 Live
                   </a>

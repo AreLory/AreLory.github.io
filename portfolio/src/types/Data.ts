@@ -8,7 +8,7 @@ export interface pfData {
   socialLinks: { name: string; url: string; icon: string }[];
   skills: Skills[];
   projects: Project[];
-  experience: Experience[];
+  studies: Studies[];
 }
 
 export interface Skills {
@@ -28,6 +28,11 @@ export interface Project {
   featured: boolean;
 }
 
+export interface Studies {
+  school: string
+  period: string
+  description: string
+}
 export interface Experience {
   company: string;
   position: string;

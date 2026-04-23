@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
-import { Heart, Mail } from "lucide-react";
+
+import { Heart, MailIcon } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 import { portfolioData } from "../mock";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const iconMap = {
-    // github: Github,
-    // linkedin: Linkedin,
-    // twitter: Twitter,
-    mail: Mail,
-  };
+  const socialIcons = {
+      github: FaGithub,
+      linkedin: FaLinkedin,
+      mail: MailIcon,
+    };
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
@@ -31,7 +33,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold bg-linear-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent mb-4">
               {portfolioData.name}
             </h3>
             <p className="text-gray-400 mb-4">{portfolioData.tagline}</p>
@@ -59,7 +61,7 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Connect</h4>
             <div className="flex gap-4">
               {portfolioData.socialLinks.map((social) => {
-                const Icon = iconMap[social.icon];
+                const Icon = socialIcons[social.icon];
                 return (
                   <motion.a
                     key={social.name}

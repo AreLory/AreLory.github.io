@@ -1,43 +1,57 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Send } from 'lucide-react';
-import { portfolioData } from '../mock';
-// import { useToast } from '../hooks/use-toast';
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { Mail, MapPin, Send } from "lucide-react";
+import { portfolioData } from "../mock";
 
 const Contact = () => {
-//   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const form = useRef();
+
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-    //   toast({
-    //     title: "Message Sent!",
-    //     description: "Thank you for reaching out. I'll get back to you soon.",
-    //   });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1500);
+    try {
+      const result = await emailjs.sendForm(
+        "service_q60ypoo",
+        "template_osxnrks",
+        form.current,
+        "6XlxIrBnJBYI1hA_X",
+      );
+
+      console.log("Email sent!", result.text);
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.log("Error:", error.text);
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-black via-gray-900 to-black">
+    <section
+      id="contact"
+      className="py-24 bg-linear-to-b from-black via-gray-900 to-black"
+    >
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -47,13 +61,14 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
               Get In Touch
             </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full mb-8" />
+          <div className="w-20 h-1 bg-linear-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full mb-8" />
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? Feel free to reach out!
+            Have a project in mind or want to collaborate? Feel free to reach
+            out!
           </p>
         </motion.div>
 
@@ -68,7 +83,8 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Let's Talk</h3>
               <p className="text-gray-400 mb-8">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I'm always open to discussing new projects, creative ideas, or
+                opportunities to be part of your vision.
               </p>
             </div>
 
@@ -80,7 +96,7 @@ const Contact = () => {
                 transition={{ delay: 0.1 }}
                 className="flex items-start gap-4 group"
               >
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 border border-cyan-500/20 group-hover:border-cyan-500/50 transition-all duration-300">
+                <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-linear-to-br from-cyan-500/10 to-emerald-500/10 border border-cyan-500/20 group-hover:border-cyan-500/50 transition-all duration-300">
                   <Mail className="text-cyan-400" size={20} />
                 </div>
                 <div>
@@ -101,7 +117,7 @@ const Contact = () => {
                 transition={{ delay: 0.2 }}
                 className="flex items-start gap-4 group"
               >
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 border border-cyan-500/20 group-hover:border-cyan-500/50 transition-all duration-300">
+                <div className="shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-linear-to-br from-cyan-500/10 to-emerald-500/10 border border-cyan-500/20 group-hover:border-cyan-500/50 transition-all duration-300">
                   <MapPin className="text-cyan-400" size={20} />
                 </div>
                 <div>
@@ -112,12 +128,14 @@ const Contact = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 rounded-2xl blur-xl" />
+              <div className="absolute inset-0 bg-linear-to-r from-cyan-500/10 to-emerald-500/10 rounded-2xl blur-xl" />
               <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
                 <p className="text-gray-300 italic">
                   "The best way to predict the future is to create it."
                 </p>
-                <p className="text-cyan-400 mt-2 font-semibold">- Let's build something amazing together</p>
+                <p className="text-cyan-400 mt-2 font-semibold">
+                  - Let's build something amazing together
+                </p>
               </div>
             </div>
           </motion.div>
@@ -128,9 +146,12 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-gray-300 font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-gray-300 font-medium mb-2"
+                >
                   Name
                 </label>
                 <input
@@ -146,7 +167,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-gray-300 font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-gray-300 font-medium mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -162,7 +186,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-gray-300 font-medium mb-2">
+                <label
+                  htmlFor="subject"
+                  className="block text-gray-300 font-medium mb-2"
+                >
                   Subject
                 </label>
                 <input
@@ -178,7 +205,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-gray-300 font-medium mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-gray-300 font-medium mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -196,7 +226,7 @@ const Contact = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-emerald-500 text-white rounded-lg font-semibold shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full px-8 py-4 bg-linear-to-r from-cyan-500 to-emerald-500 text-white rounded-lg font-semibold shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/70 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
